@@ -31,4 +31,7 @@ Here R is the actual monte carlo return. To write this more generally.
 
 $$J(\theta) = E_{\pi_{\theta}}[\nabla_{\theta} \log \pi_{\theta}(A_t|S_t)Q_{\pi_\theta}(S_t,A_t)]$$
 
+We can have a seperate regression problems for Q function $Q_{\phi}(S_t,A_t)$ parametrized by $\phi$ which acts as a critic which provides less variance in the returns 
+and a baseline to evaluate the policy against.
+
 Since $J(\theta)$ is a performance measure rather than a penalty/loss measure like other machine learning cost functions, we seek to maximize it and therefore we use stochastic gradient ascent. In the code for reinforce we therefore use the negative of this objective function and use stochastic gradient descent.
