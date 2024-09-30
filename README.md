@@ -12,7 +12,9 @@ Where i is the arbitrary starting point in the trajectory and $P(s_t,a_t|\tau)$ 
 $$J_{avgR}(\theta) = \sum_{s}d_{\pi_{\theta}}(s)\sum_{a}\pi_{\theta}(a|s)R_{s}^{a}$$
 
 $d_{\pi_{\theta}}(s)$ is the probability of reaching state s if following policy $\pi$. if $J(\theta)$ is objective function. Policy gradient optimizes it using gradient of this objective function
+
 $$\nabla \theta = \alpha \nabla_{\theta}J(\theta)$$
+
 $$\nabla_{\theta}J(\theta) = (\frac{\partial J(\theta)}{\theta_1},...,\frac{\partial J(\theta)}{\theta_n})^T$$
 
 $$\nabla_{\theta} \pi_{\theta}(a|s) = \pi_{\theta}(a|s) \frac{\nabla_{\theta}\pi_{\theta}(a|s)}{\pi_{\theta}(a|s)}$$
@@ -21,6 +23,7 @@ $$\nabla_{\theta} \pi_{\theta}(a|s) =  \pi_{\theta}(a|s) \nabla_{\theta} \log \p
 
 This simply says that we are increasing the likely hood of previously taken actions in our policy. We will make this increase proportional to the reward received form that action, That means increase the likely hood of those previously taken actions proportional to the rewards received after taking that action.
 \\ Now we know 
+
 $$J(\theta) = \sum_{s \in S}d_{\pi_{\theta}}(s)\sum_{a \in A}\pi_{\theta}(a|s)R_{s}^{a}$$
 
 $$\nabla_{\theta}J(\theta) = \sum_{s \in S}d_{\pi_{\theta}}(s)\sum_{a \in A}\pi_{\theta}(a|s) \nabla_{\theta} \log \pi_{\theta}(a|s)R_{s}^{a}$$
