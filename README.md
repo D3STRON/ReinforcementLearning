@@ -5,6 +5,7 @@ $$\pi_{\theta}(s,a) = P[a | s. \theta]$$
 WE use the average reward per time step as objective function that we want to optimize for improving the policy.
 
 $$J_{avgR}(\theta) = E[\sum_{t=0}^{T-1}r_{t+1}|\pi_{\theta}]$$
+
 $$=\sum_{t=i}^{T-1}P(s_t,a_t| \tau)r_{t+1}$$
 
 Where i is the arbitrary starting point in the trajectory and $P(s_t,a_t|\tau)$ is the probability if taking $a_t$ after reaching state $s_t$ following policy $\pi_{\theta}$ in trajectory $\tau$. This probability can be expanded as.
